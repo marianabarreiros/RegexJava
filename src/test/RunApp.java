@@ -17,12 +17,19 @@ public class RunApp {
     public static void main(String[] args) {
 //      
         String outra = "";
-        String regex = "([a-zA-Z]+:)?([0-9]{2})([a-zA-Z]{3})([0-9]{4})\\(([a-zA-Z]{3,4})\\)+";
+        String regex = "([a-zA-Z]+:)?([0-9]{2})([a-zA-Z]{3})([0-9]{4})\\(([a-zA-Z]{3,4})\\)[,]?";
         String string = "Rewards:26Mar2009(thur),27Mar2009(fri),28Mar2009(sat),28Mar2009(sat),28Mar2009(sat)";
         Pattern padrao = Pattern.compile(regex);
         Matcher mat = padrao.matcher(string);
         while(mat.find()){
-            outra+=(mat.group());    
+            //não funciona
+            if(string.matches(regex)){
+                outra+=(mat.group());
+            }
+            else{
+                System.out.println("Arquivo inválido! Formato aceito: 'Rewards:26Mar2009(thur),27Mar2009(fri),28Mar2009(sat),28Mar2009(sat),28Mar2009(sat)'");
+                break;
+            }                   
         }
         System.out.println(outra);
 //        Expressoes ex = new Expressoes("Rewards: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)");
