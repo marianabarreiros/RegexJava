@@ -20,11 +20,15 @@ public class Expressoes {
         this.string = string;
     }
     
+    
     public boolean comecaETermina(){
         this.retiraEspacos(string);
-        if(string.matches("^(?i)[a-z].*") && string.matches(".*[)]$"))
+        if(string.matches("^[a-zA-Z].*") && string.matches(".*[)]$"))
             return true;
-        return false;
+        else{
+            System.out.println("A string não começa com letra e termina com o caracter ´)´. Favor corrigir!");
+            return false;
+        }
     }
     
     public String retiraEspacos(String string){
