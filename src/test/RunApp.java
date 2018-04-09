@@ -15,13 +15,16 @@ import java.util.regex.Pattern;
  */
 public class RunApp {
     public static void main(String[] args) {
-        String regex = "([a-zA-Z]{1})+:";
-        String string = "Rewards: Especial:26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)";
+//        ([a-zA-Z]+:)? -> não funciona trazer 'Reward:' uma única vez
+        String regex = "([a-zA-Z]+:)?([0-9]{2})([a-zA-Z]{3})";
+        String string = "Rewards:26Mar2009(thur),27Mar2009(fri),28Mar2009(sat)";
         Pattern padrao = Pattern.compile(regex);
         Matcher mat = padrao.matcher(string);
+//        +:([0-9]{2})*
+//([0-9]{2})([a-zA-Z]{3})
         
         while(mat.find()){
-            System.out.println(mat.group());
+            System.out.printf(mat.group());
         }
 //        Expressoes ex = new Expressoes("Rewards: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)");
 //        System.out.println(ex.validaPadrao());
