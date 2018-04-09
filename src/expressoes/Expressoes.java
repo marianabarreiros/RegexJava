@@ -19,8 +19,9 @@ import java.util.regex.Pattern;
 public class Expressoes {
     private String string;
     private String regex = "([a-zA-Z]{1})+:";
-    private Pattern padrao;
     private Matcher matcher;
+    
+    
     
 
     public Expressoes(String string) {
