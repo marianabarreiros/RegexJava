@@ -3,19 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package expressaoregular;
+package test;
+
+import expressoes.Expressoes;
 
 /**
  *
  * @author Win-7
  */
-public class ExpressaoRegular {
-
-    /**
-     * @param args the command line arguments
-     */
+public class RunApp {
     public static void main(String[] args) {
-        // TODO code application logic here
+        Expressoes ex = new Expressoes("Rewards: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)");
+        System.out.println(ex.comecaETermina());
     }
-    
 }
