@@ -5,6 +5,9 @@
  */
 package expressoes;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 
 
@@ -15,13 +18,22 @@ package expressoes;
  */
 public class Expressoes {
     private String string;
+    private String regex = "([a-zA-Z]{1})+:";
+    private Pattern padrao;
+    private Matcher matcher;
+    
 
     public Expressoes(String string) {
         this.string = string;
     }
     
+    public boolean validaPadrao(){
+        this.comecaETermina();
+        
+            return true;  
+    }
     
-    public boolean comecaETermina(){
+    private boolean comecaETermina(){
         this.retiraEspacos(string);
         if(string.matches("^[a-zA-Z].*") && string.matches(".*[)]$"))
             return true;
@@ -31,7 +43,7 @@ public class Expressoes {
         }
     }
     
-    public String retiraEspacos(String string){
+    private String retiraEspacos(String string){
         string.replace(" ", "").trim();
         return string;
     }

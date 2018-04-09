@@ -14,6 +14,6 @@ import expressoes.Expressoes;
 public class RunApp {
     public static void main(String[] args) {
         Expressoes ex = new Expressoes("Rewards: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)");
-        System.out.println(ex.comecaETermina());
+        System.out.println(ex.validaPadrao());
     }
 }
